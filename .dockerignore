@@ -1,2 +1,6 @@
-*
-!target/quarkus-app/**
+.git
+.gitignore
+.dockerignore
+target/
+!target/quarkus-app/
+*.md
