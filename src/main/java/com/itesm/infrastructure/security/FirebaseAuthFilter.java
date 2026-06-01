@@ -36,6 +36,9 @@ public class FirebaseAuthFilter implements ContainerRequestFilter {
                 || path.equals("/status") || path.equals("status")){
             return;
         }
+        if(requestContext.getMethod().equalsIgnoreCase("OPTIONS")) {
+            return;
+        }
         String authHeader = requestContext.getHeaders().getFirst("Authorization");
         if(authHeader == null || !authHeader.startsWith("Bearer ")){
             requestContext.abortWith(
