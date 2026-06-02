@@ -21,15 +21,17 @@ Este es el backend oficial del ecosistema de la aplicación ToDo, que da soporte
    ```
 
 ## ⚙️ Variables de Entorno
-Para ejecutar el proyecto, especialmente en producción, se deben configurar las siguientes variables de entorno:
+El proyecto está configurado para ejecutarse localmente usando Quarkus Dev Services (que levanta un contenedor Docker automáticamente si está disponible). 
+Sin embargo, para ejecutarlo con la misma base de datos de producción o sin Docker, crea un archivo `.env` en el mismo directorio (o exporta las variables) con los siguientes valores exactos:
 
-- `DB_USERNAME`: Usuario de la base de datos MySQL (por defecto `root`).
-- `DB_PASSWORD`: Contraseña de la base de datos MySQL.
-- `DB_JDBC_URL`: URL de conexión a la base de datos (ej: `jdbc:mysql://34.46.248.50:3306/todogrupo1`).
-- `DB_SCHEMA_STRATEGY`: Estrategia de inicialización de esquema (por defecto `update`).
-- `FIREBASE_SERVICE_ACCOUNT_LOCATION`: Ruta al archivo JSON con las credenciales del servicio de Firebase Admin SDK.
-- `APP_VERSION`: Versión de la app (útil para el endpoint de status).
-- `PORT`: Puerto en el que corre la aplicación (por defecto `8080`).
+```env
+DB_USERNAME=root
+DB_PASSWORD=mcQ.r-d#&2f;rU5-
+DB_JDBC_URL=jdbc:mysql://34.46.248.50:3306/todogrupo1
+DB_SCHEMA_STRATEGY=update
+PORT=8080
+```
+*(Nota: Para el funcionamiento completo de validación de Auth se espera que exista un archivo `medsync-firebase-adminsdk.json` en la carpeta base si se requiere el modo Dev puro).*
 
 ## 🏃 Cómo Ejecutar el Proyecto
 
